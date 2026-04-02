@@ -1,5 +1,4 @@
-![[RemoteXY Car.png]]
-![[./images/RemoteXY Car.png]]
+![[images/RemoteXY Car.png]
 
 This project is a remix of the [RemoteXY Car](https://remotexy.com/en/examples/car/) and utilizes the [RemoteXY](https://remotexy.com/en/) app to control it.  The app is available for both Android and iPhone.  The free version can have up to 5 elements which will be plenty for this project.  
 
