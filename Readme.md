@@ -20,7 +20,7 @@ The connections between the two devices are shown in the table below:
 | D7      | IN1     |
 | D8      | IN2     |
 
-![Alt Text](<Electronics Board.png>)
+![](<images/Electronics Board.png>)
 Power to the board is provided through the USB-C port on the D1 mini.
 #### WeMos D1 Mini:
 #### DRV8833:
