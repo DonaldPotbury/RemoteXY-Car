@@ -1,5 +1,6 @@
-![[RemoteXY Car.png]]
 
+![](<images/RemoteXY Car.png>)
+![](RemoteXY%20Car.png)
 
 This project is a remix of the [RemoteXY Car](https://remotexy.com/en/examples/car/) and utilizes the [RemoteXY](https://remotexy.com/en/) app to control it.  The app is available for both Android and iPhone.  The free version can have up to 5 elements which will be plenty for this project.  
 
@@ -20,7 +21,7 @@ The connections between the two devices are shown in the table below:
 | D7      | IN1     |
 | D8      | IN2     |
 
-![[Electronics Board.png]]
+![](<Electronics Board.png>)
 Power to the board is provided through the USB-C port on the D1 mini.
 #### WeMos D1 Mini:
 #### DRV8833:
