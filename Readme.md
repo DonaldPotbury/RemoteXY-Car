@@ -1,31 +1,10 @@
-
-![Test](<images/RemoteXY Car.png>)
-
 This project is a remix of the [RemoteXY Car](https://remotexy.com/en/examples/car/) and utilizes the [RemoteXY](https://remotexy.com/en/) app to control it.  The app is available for both Android and iPhone.  The free version can have up to 5 elements which will be plenty for this project.  
 
-### About RemoteXY:
+![Test](<images/RemoteXY Car.png>)
+## RemoteXY:
 A Google AI search says: 
 	"**[RemoteXY](https://remotexy.com/)** is "a comprehensive platform for creating custom graphical user interfaces (GUIs) to remotely control microcontroller-based devices using a smartphone or tablet. It is popular among the maker community for its ease of use, as it allows for the design of mobile app interfaces without requiring extensive mobile app development or coding knowledge. 
-## Electronics:
-The electronics for this project consist of a WeMos D1 Mini microcontroller and a DRV8833 dual motor driver.
 
-The connections between the two devices are shown in the table below:
-
-| D1 Mini | DRV8833 |
-| ------- | ------- |
-| 5V      | VCC     |
-| GND     | GND     |
-| D3      | IN4     |
-| D4      | IN3     |
-| D7      | IN1     |
-| D8      | IN2     |
-
-![](<images/Electronics Board.png>)
-Power to the board is provided through the USB-C port on the D1 mini.
-#### WeMos D1 Mini:
-#### DRV8833:
-
-## Printed Components:
 
 ## Materials:
 
@@ -39,6 +18,43 @@ Power to the board is provided through the USB-C port on the D1 mini.
 |  1  | [Data Cable](https://www.amazon.com/etguuds-Charger-Charging-Braided-Samsung/dp/B0C2J2RWZR/ref=pd_bxgy_thbs_d_sccl_1/132-1523373-2361139?pd_rd_w=hHhbG&content-id=amzn1.sym.9bef5913-5870-4504-8883-3ba89d7f8e39&pf_rd_p=9bef5913-5870-4504-8883-3ba89d7f8e39&pf_rd_r=HRTE90NSFAHV15HMVZ26&pd_rd_wg=ojIzH&pd_rd_r=0dc09620-c9ba-46e9-9265-99a924131af9&pd_rd_i=B0C2J2RWZR&th=1)                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | $1.00 |
 |  4  | [m3 x 25 mm machine screw](https://www.amazon.com/cSeao-40-Pack-Phillips-Machine-Stainless/dp/B08R8J3175/ref=sr_1_4?dib=eyJ2IjoiMSJ9.lWVWb898vCIqILLCnhb36Un_e1rV579OotEAIexcaBU30VUJxRr8g3H04JPpinQZ1H5jIXBmZp2VVEKFRl-VPsDd4SgsyiWEAmY1bQILoU0VZVVCiFAR_l7EJbrgPsu88rG7CpaZyu1HgenLLlLogXOBsUwxh4MtPKVwOsMsnXax2WvErRC1SFPRC0EG5RIALpHRP6alujReOAq7EYO4a5dAviGHRbZzDIlW2wlRz2A.fMqK8Xh6F6f2mQ-T0uDpz6bmRft0ackvM7i0lf_OUE4&dib_tag=se&keywords=m3%2Bx%2B25%2Bmm&qid=1774305877&sr=8-4&th=1)                                                                                                                                                                                                                                                                                                                                                      |       |
 |  6  | m3 x 8mm self tapping screw                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |       |
+|  2  | 3mm Flat Washer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |       |
+|  1  | Roller Caster                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |       |
+
+## Electronics:
+The electronics for this project consist of a WeMos D1 Mini microcontroller and a DRV8833 dual motor driver.
+
+The connections between the two devices are shown in the table below:
+
+| D1 Mini | DRV8833 |
+| ------- | ------- |
+| 5V      | VCC     |
+| GND     | GND     |
+| D3      | IN4     |
+| D4      | IN3     |
+| D7      | IN1     |
+| D8      | IN2     |
+![677](<images/Wiring Diagram.png>)
+Wiring diagram
+
+![](<images/Electronics Board.png>)
+Components mounted on a perf board
+Power to the board is provided through the USB-C port on the D1 mini.
+#### WeMos D1 Mini:
+Makersportal.com describes the WeMos D1 Mini as:
+	The WeMos D1 Mini is an inexpensive ESP8266-based WiFi board that is low-profile but just as powerful as any NodeMCU or ESP8266-based microcontroller. The D1 Mini is incredibly versatile because it is inexpensive, WiFi-enabled, and fully compatible with the Arduino platform. In this tutorial, the ESP8266 library and board manager will be introduced in order to get the D1 Mini acting as an Arduino board. Then, a simple web page will be introduced with the intention of harnessing the WiFi capabilities of the module. The D1 Mini will act as a web server, allowing any WiFi-connected device to interact with the board and control its pins wirelessly.
+
+ ![](https://lastminuteengineers.com/wp-content/uploads/iot/WeMos-D1-Mini-Pinout.png)
+
+
+#### DRV8833:
+According to Google AI: 
+	The **DRV8833** is a dual H-bridge motor driver integrated circuit (IC) from Texas Instruments designed to control either **two brushed DC motors** or one bipolar stepper motor. It is a popular, high-efficiency alternative to the older L298N driver, especially for low-voltage, battery-powered projects like small robots and toys.
+
+This animation from Last Minute Engineers demonstrates how an H-Bridge changes polarity:
+	![](<images/H-Bridge-Working-Motor-Direction-Control-Animation.gif>)
+
+## Printed Components:
 
 
 ## Notes:
@@ -68,3 +84,6 @@ Power to the board is provided through the USB-C port on the D1 mini.
 
 [Last Minute Engineers - WeMos D1 Mini Pinout Reference](https://lastminuteengineers.com/wemos-d1-mini-pinout-reference/)
 	Pinout reference for the WeMos D1 Mini
+
+[Texas Instruments DRV8833 Specifications](https://www.ti.com/lit/ds/symlink/drv8833.pdf?ts=1775321067887&ref_url=https%253A%252F%252Fgemini.google.com%252F#:~:text=3%20Description,overtemperature.)
+
