@@ -30,18 +30,19 @@
 #include <ESP8266WiFi.h>
 
 // RemoteXY connection settings 
-#define REMOTEXY_WIFI_SSID "Maker_Car1"
+#define REMOTEXY_WIFI_SSID "CHANGE_ME"
 #define REMOTEXY_WIFI_PASSWORD ""
 #define REMOTEXY_SERVER_PORT 6377
 
 
 #include <RemoteXY.h>
 
-uint8_t const PROGMEM RemoteXY_CONF_PROGMEM[] =   // 65 bytes V19 
-  { 255,3,0,0,0,58,0,19,0,0,0,77,97,107,101,114,32,67,97,114,
-  0,31,2,106,200,200,84,1,1,2,0,5,24,63,60,60,69,10,63,63,
-  47,2,26,31,2,4,22,23,52,12,7,35,20,0,2,26,31,31,79,78,
-  0,79,70,70,0 };
+// RemoteXY GUI configuration  
+#pragma pack(push, 1)  
+uint8_t const PROGMEM RemoteXY_CONF_PROGMEM[] =   // 44 bytes V19 
+  { 255,2,0,0,0,37,0,19,0,0,0,77,97,107,101,114,32,67,97,114,
+  0,31,2,106,200,200,84,1,1,1,0,5,24,63,60,60,69,10,63,63,
+  47,2,26,31 };
   
 // this structure defines all the variables and events of your control interface 
 struct {
@@ -49,13 +50,11 @@ struct {
     // input variables
   int8_t joystick_01_x; // from -100 to 100
   int8_t joystick_01_y; // from -100 to 100
-  uint8_t switch_01; // =1 if switch ON and =0 if OFF, from 0 to 1
 
     // other variable
   uint8_t connect_flag;  // =1 if wire connected, else =0
 
 } RemoteXY;   
- 
 #pragma pack(pop)
  
 /////////////////////////////////////////////
@@ -70,51 +69,6 @@ struct {
 
 int right_motor[2] = {MOTOR_DRIVER_OUT_1, MOTOR_DRIVER_OUT_2};
 int left_motor[2]  = {MOTOR_DRIVER_OUT_3, MOTOR_DRIVER_OUT_4};
-
-
-
-
-
-void setup() 
-{
-  // Begin serial communnications
-  Serial.begin(115200);
-
-  // Set the pins to OUTPUT
-  pinMode(MOTOR_DRIVER_OUT_1, OUTPUT);
-  pinMode(MOTOR_DRIVER_OUT_2, OUTPUT);
-  pinMode(MOTOR_DRIVER_OUT_3, OUTPUT);
-  pinMode(MOTOR_DRIVER_OUT_4, OUTPUT);
-
-  // Make sure the motors are off
-  digitalWrite(MOTOR_DRIVER_OUT_1, LOW);
-  digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
-  digitalWrite(MOTOR_DRIVER_OUT_3, LOW);
-  digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
-  
-  RemoteXY_Init ();  // initialization by macros 
-}
-
-void loop() 
-{ 
-  RemoteXYEngine.handler ();   
-  
-  // Show the variables
-  Serial.print("joystick-01 [");
-  Serial.print(RemoteXY.joystick_01_x);
-  Serial.print(", ");
-  Serial.print(RemoteXY.joystick_01_y);
-  Serial.print("]");
-  Serial.println();
-
-  drive(left_motor, RemoteXY.joystick_01_y - RemoteXY.joystick_01_x);
-  drive(right_motor, RemoteXY.joystick_01_y + RemoteXY.joystick_01_x);
-
-  // TODO you loop code
-  // use the RemoteXY structure for data transfer
-  // do not call delay(), use instead RemoteXYEngine.delay() 
-
-}
 
 void drive(int motor[], int v)
 {
@@ -136,3 +90,42 @@ void drive(int motor[], int v)
   Serial.println(v);
 }
 
+void setup() 
+{
+  // Begin serial communnications
+  Serial.begin(115200);
+
+  // Set the pins to OUTPUT
+  pinMode(MOTOR_DRIVER_OUT_1, OUTPUT);
+  pinMode(MOTOR_DRIVER_OUT_2, OUTPUT);
+  pinMode(MOTOR_DRIVER_OUT_3, OUTPUT);
+  pinMode(MOTOR_DRIVER_OUT_4, OUTPUT);
+
+  // Make sure the motors are off
+  digitalWrite(MOTOR_DRIVER_OUT_1, LOW);
+  digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
+  digitalWrite(MOTOR_DRIVER_OUT_3, LOW);
+  digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
+  
+  RemoteXY_Init ();  // initialization by macros
+
+}
+
+void loop() 
+{ 
+  RemoteXYEngine.handler ();   
+  if (RemoteXY.connect_flag)
+  {
+    drive(left_motor, RemoteXY.joystick_01_y - RemoteXY.joystick_01_x);
+    drive(right_motor, RemoteXY.joystick_01_y + RemoteXY.joystick_01_x);
+  }
+  else
+  {
+    drive(left_motor, 0);
+    drive(right_motor, 0);
+  }
+  // TODO you loop code
+  // use the RemoteXY structure for data transfer
+  // do not call delay(), use instead RemoteXYEngine.delay() 
+
+}

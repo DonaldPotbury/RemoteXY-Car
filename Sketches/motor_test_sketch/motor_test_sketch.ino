@@ -4,6 +4,8 @@
 #define MOTOR_DRIVER_OUT_3 0  // D3
 #define MOTOR_DRIVER_OUT_4 2  // D4
 
+int right_motor[2] = {MOTOR_DRIVER_OUT_1, MOTOR_DRIVER_OUT_2};
+int left_motor[2]  = {MOTOR_DRIVER_OUT_3, MOTOR_DRIVER_OUT_4};
 
 void setup() 
 {
@@ -17,87 +19,49 @@ void setup()
   digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
   digitalWrite(MOTOR_DRIVER_OUT_3, LOW);
   digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
+
+  drive(left_motor, 50);
+  delay(1000);
+  drive(right_motor, 50);
+  delay(1000);
+
+  drive(left_motor, 0);
+  delay(1000);
+  drive(right_motor, 0);
+  delay(1000);
+
+  drive(left_motor, -50);
+  delay(1000);
+  drive(right_motor, -50);
+  delay(1000);
+
+  drive(left_motor, 0);
+  delay(1000);
+  drive(right_motor, 0);
+  delay(1000);
 }
 
 void loop() 
 { 
-  
-  // Left motor backwards
-  //digitalWrite(MOTOR_DRIVER_OUT_1, LOW);   
-  //digitalWrite(MOTOR_DRIVER_OUT_2, HIGH);
-  //delay(2000);
-  
-  // Left motor stop
-  //digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
-  //digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
-  //delay(2000);
-  
-  // Left motor forwards
-  //digitalWrite(MOTOR_DRIVER_OUT_1, HIGH);
-  //digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
-  //delay(2000); 
 
-  // Left motor stop
-  //digitalWrite(MOTOR_DRIVER_OUT_1, LOW);
-  //digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
-  //delay(2000);
-
-  // Ramp down left motor from 0 to 255
-  //for (int i=0; i<256; i+=5)
-  //{
-  //  digitalWrite(MOTOR_DRIVER_OUT_1, HIGH);
-  //  analogWrite(MOTOR_DRIVER_OUT_2, i);
-  //  delay(500);  
-  //}
-  // Left motor stop
-  //digitalWrite(MOTOR_DRIVER_OUT_1, LOW);
-  //digitalWrite(MOTOR_DRIVER_OUT_2, LOW);
-  //delay(2000);
-
-
-
-
-  // right motor stop
-  Serial.println("Right motor stop");
-  digitalWrite(MOTOR_DRIVER_OUT_3, LOW);
-  digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
-  delay(2000);
-
-
-  //digitalWrite(MOTOR_DRIVER_OUT_3, HIGH);
-  //digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
-  //delay(2000);
-
-  // Ramp down right motor from 0 to 255
-  Serial.println("Right motor ramp down");
-  for (int i=0; i<256; i+=5)
-  {
-    digitalWrite(MOTOR_DRIVER_OUT_3, HIGH);
-    analogWrite(MOTOR_DRIVER_OUT_4, i);
-    Serial.println(i);
-    delay(500);  
-  }
-
-  // Left motor stop
-  Serial.println("Right motor stop");
-  digitalWrite(MOTOR_DRIVER_OUT_3, LOW);
-  digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
-  delay(2000);  
-
-  Serial.println("Right motor ramp down backwards");
-  for (int i=0; i<256; i+=5)
-  {
-    digitalWrite(MOTOR_DRIVER_OUT_3, HIGH);
-    analogWrite(MOTOR_DRIVER_OUT_4, i);
-    Serial.println(i);
-    delay(500);  
-  }
-
-  // Left motor stop
-  Serial.println("Right motor stop");
-  digitalWrite(MOTOR_DRIVER_OUT_3, LOW);
-  digitalWrite(MOTOR_DRIVER_OUT_4, LOW);
-  delay(2000);  
 }
 
-
+void drive(int motor[], int v)
+{
+  if (v>100) v=100;
+  if (v<-100) v=-100;
+  if (v>0) 
+  {
+    digitalWrite(motor[0], HIGH);
+    analogWrite(motor[1], 255-(v*2.55));
+  }
+    else if (v<0) {
+    digitalWrite(motor[1], HIGH);
+    analogWrite(motor[0], 255+((v)*2.55));
+  }
+  else {
+    digitalWrite(motor[0], LOW);
+    digitalWrite(motor[1], LOW);
+  }
+  Serial.println(v);
+}

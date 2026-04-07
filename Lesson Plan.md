@@ -1,0 +1,16 @@
+
+- Intro
+- On the computer
+	- Open the Arduino IDE
+	- Configure the IDE for ESP8266 (if needed)
+	- Load the RemoteXY library
+	- Browse to RemoteXY website
+	- Create the GUI in RemoteXY
+	- Generate the Code
+	- Copy the code to the Arduino IDE
+	- Change the WiFi SSID to something unique
+	- Copy and paste the code stub I created
+	- Upload it to the WeMos D1 Mini
+- On the phone
+	- Load the App
+	- Connect to your access point
