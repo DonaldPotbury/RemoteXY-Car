@@ -46,7 +46,7 @@
 - Delete the code in the sketch stub and paste in the code generated from above
 - Delete the setup and loop functions
 	- We will be replacing them with our own.
-- Copy the [Code Stub](Sketches/Code%20Stub.md) and past it in at the bottom of code in the IDE
+- Copy the [Code Stub](Sketches/Code%20Stub.cpp) and past it in at the bottom of code in the IDE
 - Double check to insure the WiFi SSID to something unique
 - Upload it to the WeMos D1 Mini
 ##### On the phone
