@@ -48,11 +48,11 @@
 	- We will be replacing them with our own.
 - Copy the code stub shown below and past it in at the bottom of code in the IDE
 
+[Code Stub](Sketches/Code%20Stub.md)
 
-![Code Stub](Sketches/Code%20Stub.md)
-
+```Sketches/Code Stub.md```
 - Double check to insure the WiFi SSID to something unique
 - Upload it to the WeMos D1 Mini
 ##### On the phone
-	- Load the App
-	- Connect to your access point
+- Load the App
+- Connect to your access point

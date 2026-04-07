@@ -1,4 +1,3 @@
-```
 // Motor Driver Pins
 #define MOTOR_DRIVER_OUT_1 13 // D7
 #define MOTOR_DRIVER_OUT_2 15 // D8
