@@ -50,7 +50,7 @@
 
 [Code Stub](Sketches/Code%20Stub.md)
 
-```Sketches/Code Stub.md```
+```lang:Sketches/Code Stub.md```
 - Double check to insure the WiFi SSID to something unique
 - Upload it to the WeMos D1 Mini
 ##### On the phone
