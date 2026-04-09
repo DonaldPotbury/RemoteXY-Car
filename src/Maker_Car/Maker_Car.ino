@@ -30,7 +30,7 @@
 #include <ESP8266WiFi.h>
 
 // RemoteXY connection settings 
-#define REMOTEXY_WIFI_SSID "CHANGE_ME"
+#define REMOTEXY_WIFI_SSID "MakerCar1"
 #define REMOTEXY_WIFI_PASSWORD ""
 #define REMOTEXY_SERVER_PORT 6377
 
@@ -67,8 +67,8 @@ struct {
 #define MOTOR_DRIVER_OUT_3 0  // D3
 #define MOTOR_DRIVER_OUT_4 2  // D4
 
-int right_motor[2] = {MOTOR_DRIVER_OUT_1, MOTOR_DRIVER_OUT_2};
-int left_motor[2]  = {MOTOR_DRIVER_OUT_3, MOTOR_DRIVER_OUT_4};
+int left_motor[2] = {MOTOR_DRIVER_OUT_1, MOTOR_DRIVER_OUT_2};
+int right_motor[2]  = {MOTOR_DRIVER_OUT_3, MOTOR_DRIVER_OUT_4};
 
 void drive(int motor[], int v)
 {
@@ -87,7 +87,7 @@ void drive(int motor[], int v)
     digitalWrite(motor[0], LOW);
     digitalWrite(motor[1], LOW);
   }
-  Serial.println(v);
+  //Serial.println(v);
 }
 
 void setup() 
@@ -116,6 +116,14 @@ void loop()
   RemoteXYEngine.handler ();   
   if (RemoteXY.connect_flag)
   {
+    Serial.print("[");
+    Serial.print(RemoteXY.joystick_01_x);
+    Serial.print(", ");
+    Serial.print(RemoteXY.joystick_01_y);
+    Serial.print("]");
+    Serial.println();
+
+
     drive(left_motor, RemoteXY.joystick_01_y - RemoteXY.joystick_01_x);
     drive(right_motor, RemoteXY.joystick_01_y + RemoteXY.joystick_01_x);
   }
