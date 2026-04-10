@@ -35,7 +35,7 @@ According to Google AI:
 	The **DRV8833** is a dual H-bridge motor driver integrated circuit (IC) from Texas Instruments designed to control either **two brushed DC motors** or one bipolar stepper motor. It is a popular, high-efficiency alternative to the older L298N driver, especially for low-voltage, battery-powered projects like small robots and toys.
 
 This animation from Last Minute Engineers demonstrates how an H-Bridge changes polarity:
-	![](<images/H-Bridge-Working-Motor-Direction-Control-Animation.gif>)
+![](<images/H-Bridge-Working-Motor-Direction-Control-Animation.gif>)
 
 
 ## Notes:
