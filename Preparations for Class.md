@@ -6,7 +6,7 @@
 ## Configure the Arduino IDE for the ESP8266
 - This page https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/ from Random Nerds Tutorial provides great instructions and a video demonstration of this.
 
-## Download and install the RemoteXY app:
+## Download and install the RemoteXY app on you phone or pad
 - The app is available on Google Play and Apple App Store.  Search for RemoteXY and install.
 - If you have trouble finding it, go to https://remotexy.com/en/download/
 

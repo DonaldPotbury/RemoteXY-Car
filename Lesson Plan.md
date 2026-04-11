@@ -43,13 +43,8 @@
 - A source code page is presented.
 - Click "Copy code"
 - Copy the code to the Arduino IDE
-- Open the Arduino IDE
-- A blank sketch stub should appear.  If not, click File/New Sketch
-- Delete the code in the sketch stub and paste in the code generated from above
-- Delete the setup and loop functions
-	- We will be replacing them with our own.
-- Copy the code below and paste it in at the bottom of code in the IDE
-![Code Stub](Sketches/Code%20Stub.md) 
+- Delete the "setup" and "loop" functions.
+- Copy and paste the code found in "Code Stub.ccp"
 - Double check to insure the WiFi SSID to something unique
 - Upload it to the WeMos D1 Mini
 ### On the phone

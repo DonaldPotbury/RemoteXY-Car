@@ -6,7 +6,7 @@ Power to the board is provided through the USB-C port on the D1 mini.
 
 The connections between the two devices are shown in the table below:
 
-| WeMos D1 Mini | DRV8833 |         |
+| WeMos D1 Mini | DRV8833 | Motors  |
 | ------------- | ------- | ------- |
 | 5V            | VCC     |         |
 | GND           | GND     |         |
@@ -14,10 +14,10 @@ The connections between the two devices are shown in the table below:
 | D4            | IN3     |         |
 | D7            | IN1     |         |
 | D8            | IN2     |         |
-|               | OUT1    | Motor 1 |
-|               | OUT2    | Motor 1 |
-|               | OUT3    | Motor 2 |
-|               | OUT4    | Motor 2 |
+| -             | OUT1    | Motor 1 |
+| -             | OUT2    | Motor 1 |
+| -             | OUT3    | Motor 2 |
+| -             | OUT4    | Motor 2 |
 ![677](<images/Wiring Diagram.png>)
 Wiring diagram
 
