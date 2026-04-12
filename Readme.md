@@ -7,4 +7,4 @@ The free version can have up to 5 elements which will be plenty for this project
 
 The primary differences between this and the example project are the microcontroller and the motor driver.   We replaced the Arduino and L298n with a WeMos D1 Mini and a DRB8833.  And of course this model has a 3D printed chassis.
 
-[Lesson Plan](Lesson Plan.md)
+![Lesson Plan](Lesson Plan.md)
