@@ -1,3 +1,9 @@
+## Notes:
+1. The DRV8833 driver is "disabled" when it comes from the factory.  There are two ways to "enable" it.  
+	1. Close the J2 jumper with a solder bridge.  
+	2. Pull the EEP pin on the DRV8833 to HIGH by connecting it either to the 3.3 volt pin on the D1 mini or to any GPIO pin and setting it to HIGH.
+
+## References:
 [Last Minute Engineers - Controlling DC Motors with DRV8833](https://lastminuteengineers.com/drv8833-arduino-tutorial/)
 	Describes an DRV8833.  It's advantages and how to use with Arduino
 	
