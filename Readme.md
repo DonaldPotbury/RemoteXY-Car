@@ -9,7 +9,7 @@ The primary differences between this and the example project are the microcontro
 
 [Materials](<Materials.md>)
 
-[Electronics](<Electronic.md>)
+[Electronics](<Electronics.md>)
 
 [Lesson Plan](<Lesson Plan.md>)
 
