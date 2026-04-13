@@ -5,7 +5,7 @@
 - Start the Arduino IDE
 	- Configure the IDE for ESP8266 (if needed)
 		- Go to File/Preferences and paste the following string in text box labeled "Additional Boards Manager URL's"
-		- http://arduino.esp8266.com/stable/package_esp8266com_index.json
+		  http://arduino.esp8266.com/stable/package_esp8266com_index.json
 		- See https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/ for detailed instructions
 	- Load the RemoteXY library
 		- Download RemoteXY library which can be found at [https://github.com/RemoteXY/RemoteXY-Arduino-library](https://github.com/RemoteXY/RemoteXY-Arduino-library)
